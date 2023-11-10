@@ -1,0 +1,29 @@
+<div class="m-auto text-center w-50">
+<br>
+<h1 class="font-monospace"> Longest Word </h1>
+<br>
+
+<ul class="list-group list-group-horizontal justify-content-center">
+  <% $letters.each do |letter| %>
+    <li class="list-group-item font-monospace"><%= letter.capitalize %></li>
+  <% end %>
+</ul>
+
+<br>
+
+<form action="/score" method="post" data-turbo="false">
+  <%= hidden_field_tag :authenticity_token, "xp6epmH-iWkzMCLjrjMFoCujmdhS-xbLYJkXEffvuOMvfzobSkIUv3EwUlUGo80NjtQTdID2CY2Tw4BVFCcXcg" %>
+  <input type="text" class="form-control w-50 m-auto text-center" name="word" value="<%= params[:word] %><%= @letters %>" placeholder="Press Enter to Submit">
+</form>
+
+<br>
+  <p class="font-monospace">Past results:</p>
+  <br>
+  <ul class="list-group justify-content-center">
+    <% $result_log.each do |result| %>
+      <li class="list-group-item font-monospace"><%= result[:past_word].capitalize %>: <%= result[:score] %></li>
+    <% end %>
+  </ul>
+
+
+</div>

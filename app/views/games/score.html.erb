@@ -1,0 +1,11 @@
+<div class="m-auto text-center w-50">
+  <br>
+  <h1 class="font-monospace"> Longest Word </h1>
+  <br>
+  <p class="font-monospace"><strong><%= params[:word].capitalize %></strong> <%=@result[:message]%></p>
+  <p class="font-monospace"><strong>Score: <%=@result[:score]%></strong></p>
+  <br>
+
+  <p class="font-monospace text-decoration-none"><strong><%= link_to "Play Again!", new_path %></strong></p>
+
+</div>
